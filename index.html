@@ -21,15 +21,9 @@
 	</div>
 </nav>
 <ul id="slide-out" class="side-nav teal lighten-5">
-    <li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('77er3jqaZA0', '台北101');">台北101</a></li>
-	<li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('9OuSQ-9Vjps', '台中');">台中</a></li>
-	<li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('YphQ9W9xf7U', '高雄義大');">高雄義大</a></li>
-	<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
-	<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
-	<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
-	<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
-	<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
-	<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
+    <li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('77er3jqaZA0', '台北101'); updateTab('tab1');">台北101</a></li>
+	<li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('9OuSQ-9Vjps', '台中'); updateTab('tab2');">台中</a></li>
+	<li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('YphQ9W9xf7U', '高雄義大'); updateTab('tab3');">高雄義大</a></li>
 	<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
 	<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
 	<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
@@ -40,24 +34,17 @@
 	<div class="row hide-on-med-and-down">
 		<div class="col s12">
 			<ul class="tabs teal lighten-5">
-				<li class="tab col s1"><a href="#" onclick="updateVideo('77er3jqaZA0', '台北101')">台北101</a></li>
-				<li class="tab col s1"><a href="#test2" onclick="updateVideo('9OuSQ-9Vjps', '台中')">台中</a></li>
-				<li class="tab col s1"><a href="#test3" onclick="updateVideo('YphQ9W9xf7U', '高雄義大')">高雄義大</a></li>
-				<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
-				<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
-				<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
-				<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
-				<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
-				<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
-				<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
-				<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
-				<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
+				<li class="tab col s2"><a href="#tab1" onclick="updateVideo('77er3jqaZA0', '台北101')">台北101</a></li>
+				<li class="tab col s2"><a href="#tab2" onclick="updateVideo('9OuSQ-9Vjps', '台中')">台中</a></li>
+				<li class="tab col s2"><a href="#tab3" onclick="updateVideo('YphQ9W9xf7U', '高雄義大')">高雄義大</a></li>
+				<li class="tab col s2 disabled"><a href="#test4" class="black-text">晚點更新</a></li>
+				<li class="tab col s2 disabled"><a href="#test3" class="black-text">晚點更新</a></li>
+				<li class="tab col s2 disabled"><a href="#test3" class="black-text">晚點更新</a></li>
 			</ul>
 		</div>
-		<div id="test1" class="col s12"></div>
-		<div id="test2" class="col s12"></div>
-		<div id="test3" class="col s12"></div>
-		<div id="test4" class="col s12"></div>
+		<div id="tab1" class="col s12"></div>
+		<div id="tab2" class="col s12"></div>
+		<div id="tab3" class="col s12"></div>
 	</div>
 	
 	<div class="row center">
@@ -118,7 +105,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <script>
 		$(document).ready(function(){
-			$('ul.tabs').tabs();
 			$('.menu').sideNav({
 				menuWidth: 300, // Default is 240
 				closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
@@ -131,7 +117,11 @@
             $('#mainVideo').attr('src', 'https://www.youtube.com/embed/' + vid + '?autoplay=1&loop=1&playlist=' + vid);
 			$('#mainVideo').removeClass('hide');
 			$('#place').text(place);
+			$('#tab3').addClass('active');
         }
+		function updateTab(tid) {
+			$('ul.tabs').tabs('select_tab', tid);
+		}
     </script>
 </body>
 </html>
