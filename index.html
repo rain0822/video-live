@@ -4,52 +4,43 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-    <style>
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            overflow: hidden;
-        }
-
-        .video-container iframe,
-        .video-container object,
-        .video-container embed {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-    </style>
 </head>
-<body>
+<body>	
 <h3 class="center">2017跨年演唱會</h3>
 <br/>
 <div class="container">
-	<div class="row">
-		<div class="col s12">
-			<ul class="tabs">
-				<li class="tab col s3"><a href="#test1" onclick="updateVideo('4hQ5TTJF0kE', '台南心時代')">台南心時代</a></li>
-				<li class="tab col s3"><a href="#test2" onclick="updateVideo('77er3jqaZA0', '台北101')">台北101</a></li>
-				<li class="tab col s3"><a href="#test3" onclick="updateVideo('9OuSQ-9Vjps', '台中')">台中</a></li>
-				<li class="tab col s3"><a href="#test4" onclick="updateVideo('YphQ9W9xf7U', '高雄義大')">高雄義大</a></li>
-			</ul>
+	<div class="">
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs teal lighten-5">
+					<li class="tab col s1"><a href="#" onclick="updateVideo('77er3jqaZA0', '台北101')">台北101</a></li>
+					<li class="tab col s1"><a href="#test2" onclick="updateVideo('9OuSQ-9Vjps', '台中')">台中</a></li>
+					<li class="tab col s1"><a href="#test3" onclick="updateVideo('YphQ9W9xf7U', '高雄義大')">高雄義大</a></li>
+					<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
+					<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
+					<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
+					<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
+					<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
+					<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
+					<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
+					<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
+					<li class="tab col s1 disabled"><a href="#test3">晚點更新</a></li>
+				</ul>
+			</div>
+			<div id="test1" class="col s12"></div>
+			<div id="test2" class="col s12"></div>
+			<div id="test3" class="col s12"></div>
+			<div id="test4" class="col s12"></div>
 		</div>
-		<div id="test1" class="col s12"></div>
-		<div id="test2" class="col s12"></div>
-		<div id="test3" class="col s12"></div>
-		<div id="test4" class="col s12"></div>
+		
+		<div class="row center">
+			<div class="col s12">
+				<h4 id="place">請選擇想看的地區</h4>
+				<iframe id="mainVideo" height="500" width="100%" src="" class="hide"></iframe>
+			</div>
+		</div>
 	</div>
-	
-    <div class="row center">
-        <div class="col s12">
-            <h4 id="place">請選擇想看的地區</h4>
-            <iframe id="mainVideo" height="500" width="100%" src="" class="hide"></iframe>
-        </div>
-    </div>
 </div>
-
     <!--<div class="row center" style="overflow:auto;">
         <div class="col">
             <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>基隆</h6></a>
@@ -102,6 +93,7 @@
     <script>
 		$(document).ready(function(){
 			$('ul.tabs').tabs();
+			updateVideo('77er3jqaZA0', '台北101');
 		});
         function updateVideo(vid, place) {
             $('#mainVideo').attr('src', 'https://www.youtube.com/v/' + vid + '&autoplay=1');
