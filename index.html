@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <style>
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+        }
+
+        .video-container iframe,
+        .video-container object,
+        .video-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="row center" style="overflow:auto;">
+        <div class="col">
+            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>基隆</h6></a>
+        </div>
+        <div class="col">
+            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>台北101</h6></a>
+        </div>
+        <div class="col">
+            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>桃園</h6></a>
+        </div>
+        <div class="col">
+            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>新竹</h6></a>
+        </div>
+        <div class="col">
+            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>台中</h6></a>
+        </div>
+        <div class="col">
+            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>南投</h6></a>
+        </div>
+        <div class="col">
+            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>彰化</h6></a>
+        </div>
+        <div class="col">
+            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>雲林</h6></a>
+        </div>
+        <div class="col">
+            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>嘉義</h6></a>
+        </div>
+        <div class="col">
+            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>台南</h6></a>
+        </div>
+        <div class="col">
+            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>高雄</h6></a>
+        </div>
+        <div class="col">
+            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>屏東</h6></a>
+        </div>
+        <div class="col">
+            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>台東</h6></a>
+        </div>
+        <div class="col">
+            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>花蓮</h6></a>
+        </div>
+        <div class="col">
+            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>宜蘭</h6></a>
+        </div>
+    </div>
+    <div class="row center">
+        <div class="col s12">
+            <h4>高雄</h4>
+            <iframe id="mainVideo" height="500" width="100%" src="https://www.youtube.com/v/YphQ9W9xf7U&autoplay=1"></iframe>
+        </div>
+    </div>
+    <script>
+        function updateVideo(videoId) {
+            $('#mainVideo').attr('src', 'https://www.youtube.com/v/' + videoId + '&autoplay=1');
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</body>
+</html>
