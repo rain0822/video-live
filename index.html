@@ -5,12 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<style>
+		.nav {
+			//height: 100px;
+		}
+	</style>
 </head>
 <body>
-<nav>
+<nav class="nav">
 	<div class="nav-wrapper">
 	  <a class="brand-logo center">2017 跨年直播演唱會</a>
-	  <ul id="nav-mobile" class="hide-on-large-only">
+	  <ul id="nav-mobile" class="hide-on-large-only1">
 		<li><a href="#" data-activates="slide-out" class="menu"><i class="material-icons">menu</i></a></li>
 	  </ul>
 	</div>
@@ -118,8 +123,8 @@
 				menuWidth: 300, // Default is 240
 				closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
 				draggable: true // Choose whether you can drag to open on touch screens
-				});
-     
+			});
+			
 			updateVideo('77er3jqaZA0', '台北101');
 		});
         function updateVideo(vid, place) {
