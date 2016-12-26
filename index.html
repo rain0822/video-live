@@ -36,7 +36,7 @@
 		<div class="row center">
 			<div class="col s12">
 				<h4 id="place">請選擇想看的地區</h4>
-				<iframe id="mainVideo" height="500" width="100%" src="" class="hide"></iframe>
+				<iframe id="mainVideo" height="500" width="100%" src="" class="hide" frameborder="1" allowfullscreen></iframe>
 			</div>
 		</div>
 	</div>
@@ -96,7 +96,7 @@
 			updateVideo('77er3jqaZA0', '台北101');
 		});
         function updateVideo(vid, place) {
-            $('#mainVideo').attr('src', 'https://www.youtube.com/v/' + vid + '&autoplay=1');
+            $('#mainVideo').attr('src', 'https://www.youtube.com/embed/' + vid + '?autoplay=1');
 			$('#mainVideo').removeClass('hide');
 			$('#place').text(place);
         }
