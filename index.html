@@ -96,7 +96,7 @@
 			updateVideo('77er3jqaZA0', '台北101');
 		});
         function updateVideo(vid, place) {
-            $('#mainVideo').attr('src', 'https://www.youtube.com/embed/' + vid + '?autoplay=1');
+            $('#mainVideo').attr('src', 'https://www.youtube.com/embed/' + vid + '?autoplay=1&loop=1&playlist=' + vid);
 			$('#mainVideo').removeClass('hide');
 			$('#place').text(place);
         }
