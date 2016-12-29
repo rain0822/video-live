@@ -8,53 +8,77 @@
 	<meta property="og:url" content="https://rain0822.github.io/video-live/index.html" />
 	<meta property="og:image" content="https://rain0822.github.io/video-live/live.jpg" />
 	<meta property="fb:app_id" content="1863136880589199" />
-	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<style>
+		.video-container {
+			position: relative;
+			padding-bottom: 56.25%;
+			padding-top: 30px;
+			height: 0;
+			overflow: hidden;
+		}
+
+		.video-container iframe {
+			position: absolute;
+			top:0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
 </head>
 <body>
-<nav class="nav">
-	<div class="nav-wrapper">
-	  <a class="brand-logo center">2017 跨年直播演唱會</a>
-	  <ul id="nav-mobile" class="hide-on-large-only1">
-		<li><a href="#" data-activates="slide-out" class="menu"><i class="material-icons">menu</i></a></li>
-	  </ul>
-	</div>
-</nav>
-<ul id="slide-out" class="side-nav teal lighten-5">
-    <li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('77er3jqaZA0', '台北101'); updateTab('tab1');">台北101</a></li>
-	<li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('9OuSQ-9Vjps', '台中'); updateTab('tab2');">台中</a></li>
-	<li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('YphQ9W9xf7U', '高雄義大'); updateTab('tab3');">高雄義大</a></li>
-	<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
-	<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
-	<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
-</ul>
+	<nav class="nav">
+		<div class="nav-wrapper">
+		  <div class="brand-logo center">2017 跨年直播演唱會</div>
+		  <ul id="nav-mobile" class="right">
+			<li><a href="#" data-activates="slide-out" class="menu"><i class="material-icons">menu</i></a></li>
+		  </ul>
+		</div>
+	</nav>
+	<br/>
+	<ul id="slide-out" class="side-nav teal lighten-5">
+		<li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('77er3jqaZA0', '台北101'); updateTab('tab1');">台北101</a></li>
+		<li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('9OuSQ-9Vjps', '台中'); updateTab('tab2');">台中</a></li>
+		<li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('YphQ9W9xf7U', '高雄義大'); updateTab('tab3');">高雄義大</a></li>
+		<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
+		<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
+		<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
+	</ul>
 
-<br/>
-<div class="container">
-	<div class="row hide-on-med-and-down">
-		<div class="col s12">
-			<ul class="tabs teal lighten-5">
-				<li class="tab col s2"><a href="#tab1" onclick="updateVideo('77er3jqaZA0', '台北101')">台北101</a></li>
-				<li class="tab col s2"><a href="#tab2" onclick="updateVideo('9OuSQ-9Vjps', '台中')">台中</a></li>
-				<li class="tab col s2"><a href="#tab3" onclick="updateVideo('YphQ9W9xf7U', '高雄義大')">高雄義大</a></li>
-				<li class="tab col s2 disabled"><a href="#test4" class="black-text">晚點更新</a></li>
-				<li class="tab col s2 disabled"><a href="#test3" class="black-text">晚點更新</a></li>
-				<li class="tab col s2 disabled"><a href="#test3" class="black-text">晚點更新</a></li>
-			</ul>
+	<div class="container">
+		<div class="row hide-on-med-and-down">
+			<div class="col s12">
+				<ul class="tabs teal lighten-5">
+					<li class="tab col s2"><a href="#tab1" onclick="updateVideo('77er3jqaZA0', '台北101')">台北101</a></li>
+					<li class="tab col s2"><a href="#tab2" onclick="updateVideo('9OuSQ-9Vjps', '台中')">台中</a></li>
+					<li class="tab col s2"><a href="#tab3" onclick="updateVideo('YphQ9W9xf7U', '高雄義大')">高雄義大</a></li>
+					<li class="tab col s2 disabled"><a href="#test4" class="black-text">晚點更新</a></li>
+					<li class="tab col s2 disabled"><a href="#test3" class="black-text">晚點更新</a></li>
+					<li class="tab col s2 disabled"><a href="#test3" class="black-text">晚點更新</a></li>
+				</ul>
+			</div>
+			<div id="tab1" class="col s12"></div>
+			<div id="tab2" class="col s12"></div>
+			<div id="tab3" class="col s12"></div>
 		</div>
-		<div id="tab1" class="col s12"></div>
-		<div id="tab2" class="col s12"></div>
-		<div id="tab3" class="col s12"></div>
-	</div>
-	
-	<div class="row center">
-		<div class="col s12">
-			<h4 id="place">請選擇想看的地區</h4>
-			<iframe id="mainVideo" height="500" width="100%" src="" class="hide" frameborder="1" allowfullscreen></iframe>
+
+		<div class="row center">
+			<div class="col s12">
+				<div class="fb-share-button right" data-href="https://rain0822.github.io/video-live" data-layout="button_count" data-size="large" data-mobile-iframe="true" style="margin-right: 10px;">
+					<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frain0822.github.io%2Fvideo-live&amp;src=sdkpreparse">分享</a>
+				</div>
+				<h4 id="place">請選擇想看的地區</h4>
+				<div class="video-container">
+					<iframe id="mainVideo" src="" class="hide" frameborder="1" allowfullscreen></iframe>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
     <!--<div class="row center" style="overflow:auto;">
         <div class="col">
             <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>基隆</h6></a>
@@ -104,12 +128,23 @@
     </div>-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-    <script>
+	<div id="fb-root"></div>
+	<script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.8&appId=1863136880589199";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+	<script>
 		$(document).ready(function(){
 			$('.menu').sideNav({
-				menuWidth: 300, // Default is 240
-				closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-				draggable: true // Choose whether you can drag to open on touch screens
+				menuWidth: 300,
+				edge: 'right',
+				closeOnClick: true,
+				draggable: true
 			});
 			
 			updateVideo('77er3jqaZA0', '台北101');
