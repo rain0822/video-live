@@ -46,9 +46,18 @@
 	</nav>
 	<br/>
 	<ul id="slide-out" class="side-nav teal lighten-5">
-		<li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('77er3jqaZA0', '台北101'); updateTab('tab1');">台北101</a></li>
-		<li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('9OuSQ-9Vjps', '台中'); updateTab('tab2');">台中</a></li>
-		<li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('YphQ9W9xf7U', '高雄義大'); updateTab('tab3');">高雄義大</a></li>
+		<li><a class="waves-effect subheader" href="#">基隆</a></li>
+		<li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('77er3jqaZA0', '台北101'); updateTabs(2);">台北101</a></li>
+		<li><a class="waves-effect subheader" href="#">桃園</a></li>
+		<li><a class="waves-effect subheader" href="#">新竹</a></li>
+		<li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('9OuSQ-9Vjps', '台中'); updateTabs(5);">台中</a></li>
+		<li><a class="waves-effect subheader" href="#">南投</a></li>
+		<li><a class="waves-effect subheader" href="#">彰化</a></li>
+		<li><a class="waves-effect subheader" href="#">雲林</a></li>
+		<li><a class="waves-effect subheader" href="#">嘉義</a></li>
+		<li><a class="waves-effect subheader" href="#">台南</a></li>
+		<li><a class="waves-effect red-text red-darken-2" href="javascript:updateVideo('YphQ9W9xf7U', '高雄義大'); updateTabs(11);">高雄義大</a></li>
+		<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
 		<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
 		<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
 		<li><a class="waves-effect subheader" href="#">晚點更新</a></li>
@@ -57,18 +66,47 @@
 	<div class="container">
 		<div class="row hide-on-med-and-down">
 			<div class="col s12">
-				<ul class="tabs teal lighten-5">
-					<li class="tab col s2"><a href="#tab1" onclick="updateVideo('77er3jqaZA0', '台北101')">台北101</a></li>
-					<li class="tab col s2"><a href="#tab2" onclick="updateVideo('9OuSQ-9Vjps', '台中')">台中</a></li>
-					<li class="tab col s2"><a href="#tab3" onclick="updateVideo('YphQ9W9xf7U', '高雄義大')">高雄義大</a></li>
-					<li class="tab col s2 disabled"><a href="#test4" class="black-text">晚點更新</a></li>
-					<li class="tab col s2 disabled"><a href="#test3" class="black-text">晚點更新</a></li>
-					<li class="tab col s2 disabled"><a href="#test3" class="black-text">晚點更新</a></li>
+				<ul id="tabs1" class="tabs teal lighten-5">
+					<li class="tab col s2 disabled offset-s1"><a href="#tab1" class="black-text">基隆</a></li>
+					<li class="tab col s2"><a href="#tab2" onclick="updateVideo('77er3jqaZA0', '台北101'); updateTab(2);">台北101</a></li>
+					<li class="tab col s2 disabled"><a href="#tab3" class="black-text">桃園</a></li>
+					<li class="tab col s2 disabled"><a href="#tab4" class="black-text">新竹</a></li>
+					<li class="tab col s2"><a href="#tab5" onclick="updateVideo('9OuSQ-9Vjps', '台中'); updateTab(5);">台中</a></li>
 				</ul>
 			</div>
-			<div id="tab1" class="col s12"></div>
-			<div id="tab2" class="col s12"></div>
-			<div id="tab3" class="col s12"></div>
+			<div class="col s12">
+				<ul id="tabs2" class="tabs teal lighten-5">
+					<li class="tab col s2 disabled offset-s1"><a href="#tab6" class="black-text">南投</a></li>
+					<li class="tab col s2 disabled"><a href="#tab7" class="black-text">彰化</a></li>
+					<li class="tab col s2 disabled"><a href="#tab8" class="black-text">雲林</a></li>
+					<li class="tab col s2 disabled"><a href="#tab9" class="black-text">嘉義</a></li>
+					<li class="tab col s2 disabled"><a href="#tab10" class="black-text">台南</a></li>
+				</ul>
+			</div>
+			<div class="col s12">
+				<ul id="tabs3" class="tabs teal lighten-5">
+					<li class="tab col s2 offset-s1"><a href="#tab11" onclick="updateVideo('YphQ9W9xf7U', '高雄義大');  updateTab(11);">高雄義大</a></li>
+					<li class="tab col s2 disabled"><a href="#tab12" class="black-text">屏東</a></li>
+					<li class="tab col s2 disabled"><a href="#tab13" class="black-text">台東</a></li>
+					<li class="tab col s2 disabled"><a href="#tab14" class="black-text">花蓮</a></li>
+					<li class="tab col s2 disabled"><a href="#tab15" class="black-text">宜蘭</a></li>
+				</ul>
+			</div>
+			<div id="tab1"></div>
+			<div id="tab2"></div>
+			<div id="tab3"></div>
+			<div id="tab4"></div>
+			<div id="tab5"></div>
+			<div id="tab6"></div>
+			<div id="tab7"></div>
+			<div id="tab8"></div>
+			<div id="tab9"></div>
+			<div id="tab10"></div>
+			<div id="tab11"></div>
+			<div id="tab12"></div>
+			<div id="tab13"></div>
+			<div id="tab14"></div>
+			<div id="tab15"></div>
 		</div>
 
 		<div class="row center">
@@ -85,58 +123,10 @@
 			</div>
 		</div>
 	</div>
-    <!--<div class="row center" style="overflow:auto;">
-        <div class="col">
-            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>基隆</h6></a>
-        </div>
-        <div class="col">
-            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>台北101</h6></a>
-        </div>
-        <div class="col">
-            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>桃園</h6></a>
-        </div>
-        <div class="col">
-            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>新竹</h6></a>
-        </div>
-        <div class="col">
-            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>台中</h6></a>
-        </div>
-        <div class="col">
-            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>南投</h6></a>
-        </div>
-        <div class="col">
-            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>彰化</h6></a>
-        </div>
-        <div class="col">
-            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>雲林</h6></a>
-        </div>
-        <div class="col">
-            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>嘉義</h6></a>
-        </div>
-        <div class="col">
-            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>台南</h6></a>
-        </div>
-        <div class="col">
-            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>高雄</h6></a>
-        </div>
-        <div class="col">
-            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>屏東</h6></a>
-        </div>
-        <div class="col">
-            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>台東</h6></a>
-        </div>
-        <div class="col">
-            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>花蓮</h6></a>
-        </div>
-        <div class="col">
-            <a href="javascript:updateVideo('g4RrcLcDLrs');"><h6>宜蘭</h6></a>
-        </div>
-    </div>-->
-
-	<script src="//scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async="async" defer="defer" ></script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+	<script src="https://scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async="async" defer="defer" ></script>
 	<div id="fb-root"></div>
 	<script>
 
@@ -147,7 +137,7 @@
 				var js, fjs = d.getElementsByTagName(s)[0];
 				if (d.getElementById(id)) return;
 				js = d.createElement(s); js.id = id;
-				js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.8&appId=1863136880589199";
+				js.src = "https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.8&appId=1863136880589199";
 				fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
 
@@ -157,17 +147,23 @@
 				closeOnClick: true,
 				draggable: true
 			});
-			
 			updateVideo('77er3jqaZA0', '台北101');
+			updateTabs(2);
 		});
         function updateVideo(vid, place) {
             $('#mainVideo').attr('src', 'https://www.youtube.com/embed/' + vid + '?autoplay=1&loop=1&playlist=' + vid);
 			$('#mainVideo').removeClass('hide');
 			$('#place').text(place);
-			$('#tab3').addClass('active');
         }
+		function updateTabs(tid) {
+			$('ul.tabs').tabs('select_tab', 'tab' + tid);
+			updateTab(tid);
+		}
 		function updateTab(tid) {
-			$('ul.tabs').tabs('select_tab', tid);
+			$('#tabs1 .indicator').addClass('hide');
+			$('#tabs2 .indicator').addClass('hide');
+			$('#tabs3 .indicator').addClass('hide');
+			$('#tabs' + Math.ceil(tid/5) + ' .indicator').removeClass('hide');
 		}
     </script>
 </body>
