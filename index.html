@@ -180,10 +180,15 @@
 			});
 			updateVideo('t2pi692yELQ', '台北101');
 			updateTabs(2);
-
-			setInterval(nowTime, 1000);
+			if(moment().isBefore(moment('2017-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss'))) {
+				setInterval(nowTime, 1000);
+			}
 		});
 		function nowTime() {
+			if(moment().isAfter(moment('2017-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss'))) {
+				$('#now-time').html('祝您 2017年 新年快樂！！！');
+				return;
+			}
 			let time = moment('2017-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss') - moment();
 			let hour = Math.floor(time / 3600000);
 			let minute = Math.floor(time % 3600000 / 60000);
