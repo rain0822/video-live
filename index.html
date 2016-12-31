@@ -11,6 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+	<link rel="stylesheet" href="http://harshen.github.io/jquery-countdownTimer/CSS/jquery.countdownTimer.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 	<style>
@@ -34,7 +35,7 @@
 		    top: -6px;
 		}
 		
-		.line-it-butto{
+		.line-it-butto, #countdowntimer {
 		    margin-right: 4px;
 		}
 
@@ -119,7 +120,7 @@
 			<div class="line-it-button" style="display: none;" data-type="share-a" data-lang="zh-Hant">test</div>
 			<div class="fb-send" data-href="https://rain0822.github.io/video-live"></div>
 			<div class="fb-like" data-href="https://rain0822.github.io/video-live" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-			<div id="now-time"></div>
+			<div id="countdowntimer"><span id="future_date"></span></div>
 		</div>
 
 		<div class="row center">
@@ -156,51 +157,51 @@
 					</thead>
 					<tbody>
 					<tr>
-						<td>19:10-19:45</td>
+						<td>19:10 - 19:45</td>
 						<td>八三夭</td>
 					</tr>
 					<tr>
-						<td>19:45-20:10</td>
+						<td>19:45 - 20:10</td>
 						<td>羅文裕</td>
 					</tr>
 					<tr>
-						<td>20:10-20:45</td>
+						<td>20:10 - 20:45</td>
 						<td>伍佰 & china blue</td>
 					</tr>
 					<tr>
-						<td>20:45-21:10</td>
+						<td>20:45 - 21:10</td>
 						<td>豆花妹</td>
 					</tr>
 					<tr>
-						<td>21:10-21:40</td>
+						<td>21:10 - 21:40</td>
 						<td>陳勢安</td>
 					</tr>
 					<tr>
-						<td>21:40-22:10</td>
+						<td>21:40 - 22:10</td>
 						<td>卓文萱</td>
 					</tr>
 					<tr>
-						<td>22:10-22:35</td>
+						<td>22:10 - 22:35</td>
 						<td>Boxing</td>
 					</tr>
 					<tr>
-						<td>22:35-23:00</td>
+						<td>22:35 - 23:00</td>
 						<td>吳思賢</td>
 					</tr>
 					<tr>
-						<td>23:00-00:00</td>
+						<td>23:00 - 00:00</td>
 						<td>Selina</td>
 					</tr>
 					<tr>
-						<td>00:00-00:05</td>
+						<td>00:00 - 00:05</td>
 						<td>跨年倒數</td>
 					</tr>
 					<tr>
-						<td>00:05-00:10</td>
+						<td>00:05 - 00:10</td>
 						<td>市民卡抽獎</td>
 					</tr>
 					<tr>
-						<td>00:10-01:00</td>
+						<td>00:10 - 01:00</td>
 						<td>彭佳慧</td>
 					</tr>
 					</tbody>
@@ -316,7 +317,7 @@
 						<td>張智成 Z-Chen</td>
 					</tr>
 					<tr>
-						<td>23:40-00:00</td>
+						<td>23:40 - 00:00</td>
 						<td>長官上台祝福 & 倒數 | 符瓊音、麋先生、王詩安、潘裕文、張智成</td>
 					</tr>
 					<tr>
@@ -548,14 +549,14 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/locale/zh-tw.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countdown/2.0.2/jquery.countdown-zh-TW.min.js"></script>
+	<script src="http://harshen.github.io/jquery-countdownTimer/jquery.countdownTimer.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 	<script src="https://scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async="async" defer="defer" ></script>
 
 	<div id="fb-root"></div>
 
 	<script>
-		$(document).ready(function(){
+		$(function(){
 			(function(d, s, id) {
 				var js, fjs = d.getElementsByTagName(s)[0];
 				if (d.getElementById(id)) return;
@@ -563,6 +564,8 @@
 				js.src = "https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.8&appId=1863136880589199";
 				fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
+
+
 
 			$('.menu').sideNav({
 				menuWidth: 250,
@@ -574,20 +577,13 @@
 			updateTabs(2);
 
 			if(moment().isBefore(moment('2017-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss'))) {
-				setInterval(nowTime, 1000);
+				$("#future_date").countdowntimer({
+					dateAndTime : "2017/01/01 00:00:00",
+					regexpMatchFormat: "([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})",
+					regexpReplaceWith: "離2017還有 $2 : $3 : $4"
+				});
 			}
 		});
-		function nowTime() {
-			if(moment().isAfter(moment('2017-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss'))) {
-				$('#now-time').html('祝您 2017年 新年快樂！！！');
-				return;
-			}
-			let time = moment('2017-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss') - moment();
-			let hour = Math.floor(time / 3600000);
-			let minute = Math.floor(time % 3600000 / 60000);
-			let second = Math.floor(time % 60000 / 1000);
-			$('#now-time').html('離2017年只剩： ' + hour + '時 ' + minute + '分 ' + second + '秒');
-		}
         function updateVideo(vid, place) {
             $('#mainVideo').attr('src', 'https://www.youtube.com/embed/' + vid + '?autoplay=1&loop=1&playlist=' + vid);
 			$('#mainVideo').removeClass('hide');
