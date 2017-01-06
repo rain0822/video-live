@@ -224,6 +224,9 @@ define('video-live/router', ['exports', 'ember', 'video-live/config/environment'
 
   exports['default'] = Router;
 });
+define('video-live/routes/index', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Route.extend({});
+});
 define('video-live/services/ajax', ['exports', 'ember-ajax/services/ajax'], function (exports, _emberAjaxServicesAjax) {
   Object.defineProperty(exports, 'default', {
     enumerable: true,
@@ -231,6 +234,9 @@ define('video-live/services/ajax', ['exports', 'ember-ajax/services/ajax'], func
       return _emberAjaxServicesAjax['default'];
     }
   });
+});
+define("video-live/templates/index", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "Y+kUkoAJ", "block": "{\"statements\":[[\"text\",\"test\\n\"],[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "video-live/templates/index.hbs" } });
 });
 /* jshint ignore:start */
 
@@ -268,7 +274,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("video-live/app")["default"].create({"name":"video-live","version":"0.0.0+d61b88f4"});
+  require("video-live/app")["default"].create({"name":"video-live","version":"0.0.0+000dfaea"});
 }
 
 /* jshint ignore:end */

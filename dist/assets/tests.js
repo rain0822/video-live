@@ -125,6 +125,15 @@ define('video-live/tests/router.jshint.lint-test', ['exports'], function (export
     assert.ok(true, 'router.js should pass jshint.');
   });
 });
+define('video-live/tests/routes/index.jshint.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | routes/index.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/index.js should pass jshint.');
+  });
+});
 define('video-live/tests/test-helper', ['exports', 'video-live/tests/helpers/resolver', 'ember-qunit'], function (exports, _videoLiveTestsHelpersResolver, _emberQunit) {
 
   (0, _emberQunit.setResolver)(_videoLiveTestsHelpersResolver['default']);
@@ -136,6 +145,27 @@ define('video-live/tests/test-helper.jshint.lint-test', ['exports'], function (e
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'test-helper.js should pass jshint.');
+  });
+});
+define('video-live/tests/unit/routes/index-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:index', 'Unit | Route | index', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('video-live/tests/unit/routes/index-test.jshint.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | unit/routes/index-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/index-test.js should pass jshint.');
   });
 });
 /* jshint ignore:start */
