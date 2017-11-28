@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta property="og:title" content="2017年全台最詳細的跨年演唱會網路直播平台" />
+	<meta property="og:description" content="演唱會包含：基隆、台北101、桃園、新竹、台中、南投、彰化、雲林、嘉義、台南、高雄、屏東、台東、花蓮、宜蘭" />
+	<meta property="og:url" content="https://rain0822.github.io/video-live" />
+	<meta property="og:type" content="website"/>
+	<meta property="og:image" content="https://rain0822.github.io/video-live/live.jpg" />
+	<meta property="fb:app_id" content="1863136880589199" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+	<link rel="stylesheet" href="https://harshen.github.io/jquery-countdownTimer/CSS/jquery.countdownTimer.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<style>
+		.video-container {
+			position: relative;
+			padding-bottom: 56.25%;
+			padding-top: 30px;
+			height: 0;
+			overflow: hidden;
+		}
+
+		.video-container iframe {
+			position: absolute;
+			top:0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		
+		.fb_iframe_widget {
+		    top: -6px;
+		}
+		
+		.line-it-butto, #countdowntimer {
+		    margin-right: 4px;
+		}
+
+		.material-icons {
+			margin-right: 0px !important;
+		}
+
+		.side-nav a {
+			padding: 0 24px !important;
+		}
+
+		.nav-wrapper .small {
+			font-size: 1.7rem;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<div class="nav-wrapper">
+			<div class="brand-logo center hide-on-small-only">2017 跨年直播演唱會</div>
+			<div class="brand-logo small hide-on-med-and-up">2017 跨年直播演唱會</div>
+			<ul id="nav-mobile" class="right">
+				<li><a href="#" data-activates="slide-out" class="menu"><i class="material-icons">menu</i></a></li>
+			</ul>
+		</div>
+	</nav>
+	<br/>
+	<ul id="slide-out" class="side-nav teal lighten-5">
+		-<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('PFHq9htJN-I', '台北 五月天'); updateTabs(1);">台北 五月天<i id="side1" class="material-icons right"></i></a></li>
+		<!--<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('oX3cV3CGGb4', '基隆 港碼頭'); updateTabs(1);">基隆 港碼頭<i id="side1" class="material-icons right"></i></a></li>-->
+		<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('t2pi692yELQ', '台北 101'); updateTabs(2);">台北 101<i id="side2" class="material-icons right"></i></a></a></li>
+		<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('S0MydQM9gjQ', '桃園 藝文廣場'); updateTabs(3);">桃園 藝文廣場<i id="side3" class="material-icons right"></i></a></li>
+		<!--<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('t2pi692yELQ', '新竹 竹東'); updateTabs(4);">新竹 竹東<i id="side4" class="material-icons right"></i></a></li>-->
+		<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('gMVyp_chZqg', '台中 洲際棒球場'); updateTabs(5);">台中 洲際棒球場<i id="side5" class="material-icons right"></i></a></li>
+		<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('D31a58xDks0', '台中 麗寶樂園'); updateTabs(6);">台中 麗寶樂園<i id="side6" class="material-icons right"></i></a></li>
+		<!--<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('dh85Sh6FzbQ', '南投 體育場'); updateTabs(7);">南投 體育場<i id="side7" class="material-icons right"></i></a></li>-->
+		<!--<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('t2pi692yELQ', '彰化 北極宮); updateTabs(8);">彰化 北極宮<i id="side8" class="material-icons right"></i></a></li>-->
+		<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('T6ECZRkIpm4', '雲林 劍湖山世界'); updateTabs(9);">雲林 劍湖山世界<i id="side9" class="material-icons right"></i></a></li>
+		<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('64kB0mqdIa8', '嘉義 建國二村'); updateTabs(10);">嘉義 建國二村<i id="side10" class="material-icons right"></i></a></li>
+		<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('Xm8EDZKXawc', '台南 心時代'); updateTabs(11);">台南 心時代<i id="side11" class="material-icons right"></i></a></li>
+		<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('c10rE4u5HDg', '金門'); updateTabs(12);">金門<i id="side12" class="material-icons right"></i></a></li>
+		<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('KwQ2eQ5IeJs', '高雄 夢時代'); updateTabs(13);">高雄 夢時代<i id="13" class="material-icons right"></i></a></li>
+		<!--<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('t2pi692yELQ', '屏東 阿里港'); updateTabs(14);">屏東 阿里港<i id="side14" class="material-icons right"></i></a></li>-->
+		<!--<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('VFwWURMumM4', '台東 新生公園'); updateTabs(15);">台東 新生公園<i id="side15" class="material-icons right"></i></a></li>-->
+		<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('n66Hp6w28iA', '花蓮 太平洋觀光節'); updateTabs(16);">花蓮 太平洋觀光節<i id="side16" class="material-icons right"></i></a></li>
+		<!--<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('mB9KYmWhF5g', '宜蘭 熊讚'); updateTabs(17);">宜蘭 熊讚<i id="side17" class="material-icons right"></i></a></li>-->
+		<!--<li><a class="waves-effect red-text red-darken-2 side" href="javascript:updateVideo('mB9KYmWhF5g', '宜蘭 羅東'); updateTabs(18);">宜蘭 羅東<i id="side18" class="material-icons right"></i></a></li>-->
+	</ul>
+
+	<div class="container">
+		<div class="row hide-on-med-and-down">
+			<div class="col s12">
+				<ul id="tabs1" class="tabs">
+					<li class="tab col s2"><a href="#tab1" onclick="updateVideo('PFHq9htJN-I', '台北 五月天'); updateTab(1);" class="waves-effect waves-orange blue-text blue-darken-3 blue-text blue-darken-3">台北 五月天</a></li>
+					<!--<li class="tab col s2"><a href="#tab1" onclick="updateVideo('oX3cV3CGGb4', '基隆 港碼頭'); updateTab(1);" class="waves-effect waves-orange blue-text blue-darken-3 blue-text blue-darken-3">基隆 港碼頭</a></li>-->
+					<li class="tab col s2"><a href="#tab2" onclick="updateVideo('t2pi692yELQ', '台北 101'); updateTab(2);" class="waves-effect waves-orange blue-text blue-darken-3">台北 101</a></li>
+					<li class="tab col s2"><a href="#tab3" onclick="updateVideo('S0MydQM9gjQ', '桃園 藝文廣場'); updateTab(3);" class="waves-effect waves-orange blue-text blue-darken-3">桃園 藝文廣場</a></li>
+					<!--<li class="tab col s2"><a href="#tab4" onclick="updateVideo('t2pi692yELQ', '新竹 竹東'); updateTab(4);" class="waves-effect waves-orange blue-text blue-darken-3">新竹 竹東</a></li>-->
+					<li class="tab col s2"><a href="#tab5" onclick="updateVideo('gMVyp_chZqg', '台中 洲際棒球場'); updateTab(5);" class="waves-effect waves-orange blue-text blue-darken-3">台中 洲際棒球場</a></li>
+					<li class="tab col s2"><a href="#tab6" onclick="updateVideo('D31a58xDks0', '台中 麗寶樂園'); updateTab(6);" class="waves-effect waves-orange blue-text blue-darken-3">台中 麗寶樂園</a></li>
+				</ul>
+			</div>
+			<div class="col s12">
+				<ul id="tabs2" class="tabs">
+					<!--<li class="tab col s2"><a href="#tab7" onclick="updateVideo('dh85Sh6FzbQ', '南投 體育場'); updateTab(7);" class="waves-effect waves-orange blue-text blue-darken-3">南投 體育場</a></li>-->
+					<!--<li class="tab col s2"><a href="#tab8" onclick="updateVideo('t2pi692yELQ', '彰化 北極宮'); updateTab(8);" class="waves-effect waves-orange blue-text blue-darken-3">彰化 北極宮</a></li>-->
+					<li class="tab col s2"><a href="#tab9" onclick="updateVideo('T6ECZRkIpm4', '雲林 劍湖山世界'); updateTab(9);" class="waves-effect waves-orange blue-text blue-darken-3">雲林 劍湖山世界</a></li>
+					<li class="tab col s2"><a href="#tab10" onclick="updateVideo('64kB0mqdIa8', '嘉義 建國二村'); updateTab(10);" class="waves-effect waves-orange blue-text blue-darken-3">嘉義 建國二村</a></li>
+					<li class="tab col s2"><a href="#tab11" onclick="updateVideo('Xm8EDZKXawc', '台南 心時代'); updateTab(11);" class="waves-effect waves-orange blue-text blue-darken-3">台南 心時代</a></li>
+					<li class="tab col s2"><a href="#tab12" onclick="updateVideo('c10rE4u5HDg', '金門'); updateTab(12);" class="waves-effect waves-orange blue-text blue-darken-3">金門</a></li>
+				</ul>
+			</div>
+			<div class="col s12">
+				<ul id="tabs3" class="tabs">
+					<li class="tab col s2"><a href="#tab13" onclick="updateVideo('KwQ2eQ5IeJs', '高雄 夢時代');  updateTab(13);" class="waves-effect waves-orange blue-text blue-darken-3">高雄 夢時代</a></li>
+					<!--<li class="tab col s2"><a href="#tab14" onclick="updateVideo('t2pi692yELQ', '屏東 阿里港'); updateTab(14);" class="waves-effect waves-orange blue-text blue-darken-3">屏東 阿里港</a></li>-->
+					<!--<li class="tab col s2"><a href="#tab15" onclick="updateVideo('VFwWURMumM4', '台東 新生公園'); updateTab(15);" class="waves-effect waves-orange blue-text blue-darken-3">台東 新生公園</a></li>-->
+					<li class="tab col s2"><a href="#tab16" onclick="updateVideo('n66Hp6w28iA', '花蓮 太平洋觀光節'); updateTab(16);" class="waves-effect waves-orange blue-text blue-darken-3">花蓮 太平洋觀光節</a></li>
+					<!--<li class="tab col s2"><a href="#tab17" onclick="updateVideo('mB9KYmWhF5g', '宜蘭 熊讚'); updateTab(17);" class="waves-effect waves-orange blue-text blue-darken-3">宜蘭 熊讚</a></li>-->
+					<!--<li class="tab col s2"><a href="#tab18" onclick="updateVideo('mB9KYmWhF5g', '宜蘭 羅東'); updateTab(18);" class="waves-effect waves-orange blue-text blue-darken-3">宜蘭 羅東</a></li>-->
+				</ul>
+			</div>
+		</div>
+
+		<div class="right">
+			<div class="line-it-button" style="display: none;" data-type="share-a" data-lang="zh-Hant">test</div>
+			<div class="fb-send" data-href="https://rain0822.github.io/video-live"></div>
+			<div class="fb-like" data-href="https://rain0822.github.io/video-live" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+			<div id="countdowntimer"><span id="future_date"></span></div>
+		</div>
+
+		<div class="row center">
+			<div class="col s12">
+				<h4 id="place"></h4>
+				<div class="video-container">
+					<iframe id="mainVideo" src="" class="hide" frameborder="1" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+		<div id="description1" class="hide">
+			<div id="tab1">
+				<!--<h5>地點：基隆港碼頭</h5>
+				<p>活動時間：2016/12/31 19:00 ~ 2017/01/01 01:00</p>
+				<p>主持人：舞思愛、DJ- So What</p>
+				<p>演唱卡司：搖滾大嬸、IF Music Band、崇右熱門音樂社、四分衛、TRASH、台客電力公司、ASA樂團</p>-->
+			</div>
+			<div id="tab2">
+				<h5>地點：台北市政府前廣場(11008 臺北市信義區市府路1號)</h5>
+				<p>活動時間：2016/12/31 19:00 ~ 2017/01/01 01:00</p>
+				<p>主持人：曾國城、曾寶儀</p>
+				<p>演唱卡司：A-Lin、伍佰、玖壹壹、Boxing、Gentleman、SpeXial、八三夭、安心亞、李佳薇、愷樂、周湯豪、吳思賢</p>
+			</div>
+			<div id="tab3">
+				<h5>地點：桃園藝文廣場(330台灣桃園市中正路1188號)</h5>
+				<p>活動時間：2016/12/31 19:00 ~ 2017/01/01 01:00</p>
+				<p>主持人：黃子佼、李懿、翁滋蔓</p>
+				<table class="highlight bordered">
+					<thead>
+					<tr>
+						<th>演出時間</th>
+						<th>演出人員</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>19:10 - 19:45</td>
+						<td>八三夭</td>
+					</tr>
+					<tr>
+						<td>19:45 - 20:10</td>
+						<td>羅文裕</td>
+					</tr>
+					<tr>
+						<td>20:10 - 20:45</td>
+						<td>伍佰 & china blue</td>
+					</tr>
+					<tr>
+						<td>20:45 - 21:10</td>
+						<td>豆花妹</td>
+					</tr>
+					<tr>
+						<td>21:10 - 21:40</td>
+						<td>陳勢安</td>
+					</tr>
+					<tr>
+						<td>21:40 - 22:10</td>
+						<td>卓文萱</td>
+					</tr>
+					<tr>
+						<td>22:10 - 22:35</td>
+						<td>Boxing</td>
+					</tr>
+					<tr>
+						<td>22:35 - 23:00</td>
+						<td>吳思賢</td>
+					</tr>
+					<tr>
+						<td>23:00 - 00:00</td>
+						<td>Selina</td>
+					</tr>
+					<tr>
+						<td>00:00 - 00:05</td>
+						<td>跨年倒數</td>
+					</tr>
+					<tr>
+						<td>00:05 - 00:10</td>
+						<td>市民卡抽獎</td>
+					</tr>
+					<tr>
+						<td>00:10 - 01:00</td>
+						<td>彭佳慧</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="tab4" class="hide">
+				<h5>地點：竹東鎮仁愛停車場</h5>
+				<p>活動時間：2016/12/31 19:00 ~ 2017/01/01 00:30</p>
+				<p>主持人：</p>
+				<table class="highlight bordered">
+					<thead>
+					<tr>
+						<th>演出時間</th>
+						<th>演出人員</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>19:00 - 19:05</td>
+						<td>晚會開場</td>
+					</tr>
+					<tr>
+						<td>19:05 - 19:15</td>
+						<td>山歌王 - 彭勝城</td>
+					</tr>
+					<tr>
+						<td>19:15 - 19:30</td>
+						<td>一本武士道</td>
+					</tr>
+					<tr>
+						<td>19:30 - 19:45</td>
+						<td>㷯樂團</td>
+					</tr>
+					<tr>
+						<td>19:45 - 20:10</td>
+						<td>享樂１０弦</td>
+					</tr>
+					<tr>
+						<td>20:10 - 20:30</td>
+						<td>劉慧卿</td>
+					</tr>
+					<tr>
+						<td>20:30 - 20:50</td>
+						<td>SWAY</td>
+					</tr>
+					<tr>
+						<td>20:50 - 21:00</td>
+						<td>一起瘋抽獎：六獎－東方御廚三千元餐券Ｘ２張、五獎－腳踏車１５輛</td>
+					</tr>
+					<tr>
+						<td>21:00 - 21:20</td>
+						<td>REE</td>
+					</tr>
+					<tr>
+						<td>21:20 - 21:30</td>
+						<td>一起瘋抽獎：五獎－腳踏車Ｘ２０輛</td>
+					</tr>
+					<tr>
+						<td>21:30 - 21:50</td>
+						<td>王大文</td>
+					</tr>
+					<tr>
+						<td>21:50 - 22:00</td>
+						<td>一起瘋抽獎：四獎－電視Ｘ７臺</td>
+					</tr>
+					<tr>
+						<td>22:00 - 22:20</td>
+						<td>關詩敏</td>
+					</tr>
+					<tr>
+						<td>22:20 - 22:30</td>
+						<td>一起瘋抽獎：三獎－iPhone7Ｘ３支</td>
+					</tr>
+					<tr>
+						<td>22:30 - 23:00</td>
+						<td>方炯鑌</td>
+					</tr>
+					<tr>
+						<td>23:00 - 23:10</td>
+						<td>一起瘋抽獎：二獎－電動機車Ｘ４臺</td>
+					</tr>
+					<tr>
+						<td>23:10 - 23:30</td>
+						<td>秀蘭瑪雅</td>
+					</tr>
+					<tr>
+						<td>23:30 - 00:03</td>
+						<td>竹東團圓夜晚會－喜迎２０１７年倒數儀式</td>
+					</tr>
+					<tr>
+						<td>00:03 - 00:20</td>
+						<td>白安</td>
+					</tr>
+					<tr>
+						<td>00:20 - 00:30</td>
+						<td>一起瘋抽獎：一獎－現代汽車Ｘ１部</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="tab5">
+				<h5>地點：台中洲際棒球場</h5>
+				<p>活動時間：2016/12/31 16:00 ~ 2017/01/01 01:00</p>
+				<p>主持人：Kid、Lulu、小蝦、邵庭</p>
+				<p>演唱卡司：滅火器樂團、曾沛慈、韋禮安、Dears、晨悠二人組、鐵獅亮光團、董事長樂團+九天、溫嵐、陳夢晨、玖壹壹、MATZKA、黃夏欣、盧廣仲、陳大天、方炯濱、張震嶽+MCHotDog熱狗+頑童MJ116「兄弟本色」(倒數)</p>
+			</div>
+			<div id="tab6">
+				<h5>地點：台中后里麗寶樂園</h5>
+				<p>活動時間：2016/12/31 16:00 ~ 2017/01/01 01:00</p>
+				<p>主持人：阿Ken、Sandy、丫頭、鯰魚哥</p>
+				<p>演唱卡司：許富凱、周湯豪、MATZKA、葉諾帆、郭靜、盧廣仲、李愛琦、小A辣+林進、愷樂、BOi!、鯰魚哥、玖壹壹、晨悠二人組、JR、5566(倒數)</p>
+			</div>
+		</div>
+		<div id="description2" class="hide">
+			<div id="tab7" class="hide">
+				<h5>地點：南投縣立體育場(南投縣南投市南崗一路300號)</h5>
+				<p>活動時間：2016/12/31 19:00 ~ 2017/01/01 00:30</p>
+				<p>主持人：民雄、Gigi Lin 林如琦</p>
+				<table class="highlight bordered">
+					<thead>
+					<tr>
+						<th>演出時間</th>
+						<th>演出人員</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>18:50 - 19:00</td>
+						<td>主持人開場</td>
+					</tr>
+					<tr>
+						<td>19:00 - 19:15</td>
+						<td>甜心時代</td>
+					</tr>
+					<tr>
+						<td>19:15 - 19:30</td>
+						<td>紫羅蘭樂團</td>
+					</tr>
+					<tr>
+						<td>19:30 - 19:35</td>
+						<td>第一階段抽獎</td>
+					</tr>
+					<tr>
+						<td>19:35 - 19:50</td>
+						<td>余荃斌 NoName</td>
+					</tr>
+					<tr>
+						<td>19:50 - 20:20</td>
+						<td>是元介 & 老師你會不會回來</td>
+					</tr>
+					<tr>
+						<td>20:20 - 20:40</td>
+						<td>凃佩岑</td>
+					</tr>
+					<tr>
+						<td>20:40 - 21:00</td>
+						<td>邰肇玫</td>
+					</tr>
+					<tr>
+						<td>21:00 - 21:20</td>
+						<td>李明德</td>
+					</tr>
+					<tr>
+						<td>21:20 - 21:45</td>
+						<td>潘越雲</td>
+					</tr>
+					<tr>
+						<td>21:45 - 21:50</td>
+						<td>縣長特別結目</td>
+					</tr>
+					<tr>
+						<td>21:50 - 22:00</td>
+						<td>第二階段抽獎</td>
+					</tr>
+					<tr>
+						<td>22:00 - 22:20</td>
+						<td>符瓊音 Meeia Foo</td>
+					</tr>
+					<tr>
+						<td>22:20 - 22:38</td>
+						<td>搖滾樂團 P!SCO</td>
+					</tr>
+					<tr>
+						<td>22:38 - 22:45</td>
+						<td>加碼抽獎</td>
+					</tr>
+					<tr>
+						<td>22:45 - 23:00</td>
+						<td>麋先生 Mixer 樂團</td>
+					</tr>
+					<tr>
+						<td>23:00 - 23:20</td>
+						<td>王詩安 Diana Wang</td>
+					</tr>
+					<tr>
+						<td>23:20 - 23:40</td>
+						<td>潘裕文 Peter Pan</td>
+					</tr>
+					<tr>
+						<td>23:40 - 23:45</td>
+						<td>張智成 Z-Chen</td>
+					</tr>
+					<tr>
+						<td>23:40 - 00:00</td>
+						<td>長官上台祝福 & 倒數 | 符瓊音、麋先生、王詩安、潘裕文、張智成</td>
+					</tr>
+					<tr>
+						<td>00:00 - 00:05</td>
+						<td>劇情閃耀燈光秀</td>
+					</tr>
+					<tr>
+						<td>00:05 - 00:20</td>
+						<td>張智成 Z-Chen</td>
+					</tr>
+					<tr>
+						<td>00:20 - 00:30</td>
+						<td>第三階段抽獎 - 抽大獎</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="tab8" class="hide">
+				<h5>地點：忠權里 北極宮前廣場(辭修路128巷與自立街交叉處)</h5>
+				<p>活動時間：2016/12/31 18:00 ~ 2017/01/01 00:30</p>
+				<p>主持人：</p>
+				<p>演唱卡司：一綾、董育君、胡宇威、吳俊宏、劉明峰、邱鋒澤、天氣女孩</p>
+			</div>
+			<div id="tab9">
+				<h5>地點：雲林劍湖山世界(雲林古坑鄉永光村大湖口67號)</h5>
+				<p>活動時間：2016/12/31 ~ 2017/01/01</p>
+				<p>主持人：潘若迪、阿諾</p>
+				<p>演唱卡司：郭靜、樂團Under Lover、愛紗、阿達、No Name、叫賣哥</p>
+			</div>
+			<div id="tab10">
+				<h5>地點：嘉義市建國二村(原台灣燈會場地)</h5>
+				<p>活動時間：2016/12/31 19:00 ~ 2017/01/01 00:30</p>
+				<p>主持人：</p>
+				<p>演唱卡司：李毓芬、許哲珮、陳建瑋、符瓊音、滅火器、宇宙人、旺福、美秀集團、猛虎巧克力、RCM</p>
+			</div>
+			<div id="tab11">
+				<h5>地點：高鐵台南站廣場(南市歸仁區歸仁大道100號)</h5>
+				<p>活動時間：2016/12/31 18:00 ~ 2017/01/01 00:40</p>
+				<p>主持人：：由胡瓜、Janet、浩角翔起、白家綺</p>
+				<table class="highlight bordered">
+					<thead>
+					<tr>
+						<th>演出時間</th>
+						<th>演出人員</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>18:00-18:45</td>
+						<td>就是愛秀</td>
+					</tr>
+					<tr>
+						<td>19:00-19:10</td>
+						<td>晚會開場-「我的老師叫小賀」劇組</td>
+					</tr>
+					<tr>
+						<td>19:10-19:30</td>
+						<td>黃鴻升</td>
+					</tr>
+					<tr>
+						<td>19:30-20:00</td>
+						<td>曹雅雯 郭婷筠</td>
+					</tr>
+					<tr>
+						<td>20:00-20:20</td>
+						<td>朱俐靜</td>
+					</tr>
+					<tr>
+						<td>20:20-20:40</td>
+						<td>羅平+王樂妍 王建復 白家綺</td>
+					</tr>
+					<tr>
+						<td>20:40-21:00</td>
+						<td>大支</td>
+					</tr>
+					<tr>
+						<td>21:00-21:30</td>
+						<td>李玉璽</td>
+					</tr>
+					<tr>
+						<td>21:30-21:50</td>
+						<td>李毓芬</td>
+					</tr>
+					<tr>
+						<td>21:50-22:10</td>
+						<td>曾沛慈</td>
+					</tr>
+					<tr>
+						<td>22:10-22:30</td>
+						<td>韋禮安</td>
+					</tr>
+					<tr>
+						<td>22:35-22:50</td>
+						<td>許富凱 蔡佳麟 曹雅雯 郭婷筠</td>
+					</tr>
+					<tr>
+						<td>22:50-23:05</td>
+						<td>浩角翔起</td>
+					</tr>
+					<tr>
+						<td>23:05-23:30</td>
+						<td>郭書瑤</td>
+					</tr>
+					<tr>
+						<td>23:30-00:00</td>
+						<td>滅火器 陳金鋒</td>
+					</tr>
+					<tr>
+						<td>00:00-00:30</td>
+						<td>SpeXial</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="tab12">
+				<h5>地點：金門</h5>
+				<p>活動時間：</p>
+				<p>主持人：</p>
+				<p>演唱卡司：</p>
+			</div>
+		</div>
+		<div id="description3" class="hide">
+			<div id="tab13">
+				<h5>地點：高雄夢時代 時代大道</h5>
+				<p>活動時間：2016/12/31 19:00 ~ 2016/01/01 01:00</p>
+				<p>主持人：Dennis、阿喜</p>
+				<table class="highlight bordered">
+					<thead>
+					<tr>
+						<th>演出時間</th>
+						<th>演出人員</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>18:30-19:00</td>
+						<td>DJ / VJ</td>
+					</tr>
+					<tr>
+						<td>19:00-19:05</td>
+						<td>主持 ( Dennis & 阿喜 ) Opening</td>
+					</tr>
+					<tr>
+						<td>19:05-19:40</td>
+						<td>JR 紀言愷 + 阿喜</td>
+					</tr>
+					<tr>
+						<td>19:40-20:00</td>
+						<td>孫盛希</td>
+					</tr>
+					<tr>
+						<td>20:00-20:30</td>
+						<td>Aivee</td>
+					</tr>
+					<tr>
+						<td>20:30-20:45</td>
+						<td>DJ / VJ</td>
+					</tr>
+					<tr>
+						<td>20:45-21:25</td>
+						<td>台灣爽樂團</td>
+					</tr>
+					<tr>
+						<td>21:25-21:55</td>
+						<td>林芯儀</td>
+					</tr>
+					<tr>
+						<td>21:55-22:25</td>
+						<td>大支 & 小人</td>
+					</tr>
+					<tr>
+						<td>22:25-22:55</td>
+						<td>陳彥允</td>
+					</tr>
+					<tr>
+						<td>22:55-23:10</td>
+						<td>DJ / VJ</td>
+					</tr>
+					<tr>
+						<td>23:10-23:45</td>
+						<td>陳綺貞</td>
+					</tr>
+					<tr>
+						<td>23:45-00:00</td>
+						<td>市長致詞 & 倒數</td>
+					</tr>
+					<tr>
+						<td>00:00-00:06</td>
+						<td>投影光秀</td>
+					</tr>
+					<tr>
+						<td>00:06-01:00</td>
+						<td>DJ / VJ</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="tab14" class="hide">
+				<h5>地點：屏東縣阿里港</h5>
+				<p>活動時間：2016/12/31 20:00 ~ 2016/01/01 00:30</p>
+				<p>主持人：梅東生、簡妤秦、黑面</p>
+				<p>演唱卡司：生命力樂團、魏嘉榆、鄔兆邦、陳雷、莊振凱、戴梅君、蔡小虎、陳思安</p>
+			</div>
+			<div id="tab15" class="hide">
+				<h5>地點：臺東市新生公園(秀泰影城旁)</h5>
+				<p>活動時間：2016/12/31 19:30 ~ 2016/01/01</p>
+				<p>主持人：</p>
+				<p>演唱卡司：亂彈阿翔、彩虹姐姐、番茄姐姐、林大晉、黃上、簡語卉、太陽下山樂團、純粹人聲樂團</p>
+			</div>
+			<div id="tab16">
+				<h5>地點：花蓮縣六期重劃區(花蓮市中山路與重慶路交叉口)</h5>
+				<p>活動時間：2016/12/31 20:00 ~ 2016/01/01</p>
+				<p>主持人：</p>
+				<p>演唱卡司：蕭敬騰 Jam Hsiao 、 GTM 、 TOP1 男子漢 、 袁詠琳 Cindy Yen 、 陳零九 Nine Chen 、 HUSH 、 羅美玲 Yokuy Utaw 、 陶嫚曼Mandy 、 GJ 蔣卓嘉 、Erika 劉艾立 、 FS 、 我是小龜-楊程鈞 、 何維健 Derrick Hoh 、 小宇</p>
+			</div>
+			<div id="tab17" class="hide">
+				<h5>地點：宜蘭市蘭城新月廣場(宜蘭市民權路二段38巷6號)</h5>
+				<p>活動時間：2016/12/31 19:00 ~ 2016/01/01</p>
+				<p>主持人：劉雨柔、陳建男(MC A-Man)</p>
+				<p>演唱卡司：安心亞、戴愛玲、朱俐靜、POPU LADY、辰亦儒、紅花樂團、田亞霍、跨院、鄧福如、舒子晨、倪安東、郭曉曉</p>
+			</div>
+			<div id="tab18" class="hide">
+				<h5>地點：羅東中山公園</h5>
+				<p>活動時間：2016/12/31 19:00 ~ 2016/01/01</p>
+				<p>主持人：</p>
+				<p>演唱卡司：卓義峰、林凡、米可白、林隆璇、賴銘偉、李吳兄弟、皇媂樂團、HOT SHOCK、何紫妍</p>
+			</div>
+		</div>
+		<br/>
+		<hr/>
+		<p class="red-text red-darken-3">若資料有誤或有其它意見歡迎留言詢問，謝謝！</p>
+		<div class="fb-comments" data-href="https://rain0822.github.io/video-live" data-numposts="5"></div>
+	</div>
+	<br/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/locale/zh-tw.js"></script>
+	<script src="https://harshen.github.io/jquery-countdownTimer/jquery.countdownTimer.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+	<script src="https://scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async="async" defer="defer" ></script>
+
+	<div id="fb-root"></div>
+
+	<script>
+		$(function(){
+			(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.8&appId=1863136880589199";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+
+
+
+			$('.menu').sideNav({
+				menuWidth: 250,
+				edge: 'right',
+				closeOnClick: true,
+				draggable: true
+			});
+			updateVideo('t2pi692yELQ', '台北101');
+			updateTabs(2);
+
+			if(moment().isBefore(moment('2017-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss'))) {
+				$("#future_date").countdowntimer({
+					dateAndTime : "2017/01/01 00:00:00",
+					regexpMatchFormat: "([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})",
+					regexpReplaceWith: "離2017還有 $2 : $3 : $4"
+				});
+			}
+		});
+        function updateVideo(vid, place) {
+            $('#mainVideo').attr('src', 'https://www.youtube.com/embed/' + vid + '?autoplay=1&loop=1&playlist=' + vid);
+			$('#mainVideo').removeClass('hide');
+			$('#place').text(place);
+        }
+		function updateTabs(tid) {
+			$('ul.tabs').tabs('select_tab', 'tab' + tid);
+			updateTab(tid);
+		}
+		function updateTab(tid) {
+			$('#tabs1 .indicator').addClass('hide');
+			$('#tabs2 .indicator').addClass('hide');
+			$('#tabs3 .indicator').addClass('hide');
+			$('#description1').addClass('hide');
+			$('#description2').addClass('hide');
+			$('#description3').addClass('hide');
+			$('#tabs' + Math.ceil(tid/6) + ' .indicator').removeClass('hide');
+			$('#description' + Math.ceil(tid/6)).removeClass('hide');
+
+			$('.side').children('.material-icons').text('');
+			$('#side' + tid).text('done');
+		}
+    </script>
+</body>
+</html>
